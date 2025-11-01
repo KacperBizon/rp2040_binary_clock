@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 0.9,
+          "height": 1.8,
+          "width": 1.8
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -226,12 +226,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "lib_symbol_mismatch|1435100|1790700|c1e0c47b-72da-4146-ae55-73ba8f3adb70|00000000-0000-0000-0000-000000000000|||",
-        "pin 2,4 are connected tot GND, not 2,3"
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
