@@ -2732,6 +2732,191 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_Wuerth_450301014042"
+			(pin_names
+				(offset 1)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Wuerth_450301014042"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Switch slide, single pole double throw"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "changeover single-pole opposite-side-connection double-throw spdt ON-ON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW*Wuerth*WS*SLTV*10x2.5x6.4*P2.54mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Wuerth_450301014042_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.651 0.254) (xy 1.651 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_Wuerth_450301014042_1_1"
+				(rectangle
+					(start -3.175 3.81)
+					(end 3.175 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers
@@ -3285,6 +3470,10 @@
 		(uuid "6577f34c-5fed-422f-b71b-3371e70f13be")
 	)
 	(no_connect
+		(at 266.7 59.69)
+		(uuid "6ab87a87-0c36-4d31-850c-50e3853138cf")
+	)
+	(no_connect
 		(at 172.72 115.57)
 		(uuid "8e6dc114-e51c-4944-b07f-216742f7c659")
 	)
@@ -3301,6 +3490,16 @@
 			(type default)
 		)
 		(uuid "02f45999-dd43-450b-841b-0fdbfdf36dc1")
+	)
+	(wire
+		(pts
+			(xy 226.06 45.72) (xy 226.06 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03255a4e-ba4e-4c30-8ca2-a66352716130")
 	)
 	(wire
 		(pts
@@ -3624,6 +3823,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 57.15) (xy 226.06 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47a0a871-d60e-4e68-b971-ff9818b8daf0")
+	)
+	(wire
+		(pts
 			(xy 264.16 21.59) (xy 273.05 21.59)
 		)
 		(stroke
@@ -3791,6 +4000,16 @@
 			(type default)
 		)
 		(uuid "64e366d5-436f-4c89-941b-7bf1534da40c")
+	)
+	(wire
+		(pts
+			(xy 223.52 59.69) (xy 226.06 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66d95586-7c5f-4316-9a89-a7f972424f31")
 	)
 	(wire
 		(pts
@@ -4054,6 +4273,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 54.61) (xy 228.6 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "950e8b36-18b5-46d7-b699-aa8aeafbe670")
+	)
+	(wire
+		(pts
 			(xy 143.51 168.91) (xy 167.64 168.91)
 		)
 		(stroke
@@ -4224,6 +4453,16 @@
 	)
 	(wire
 		(pts
+			(xy 266.7 64.77) (xy 271.78 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba7fef21-fd2a-4044-9259-2fe439851969")
+	)
+	(wire
+		(pts
 			(xy 170.18 80.01) (xy 172.72 80.01)
 		)
 		(stroke
@@ -4364,6 +4603,16 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 45.72) (xy 241.3 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ceb69ad2-00e8-4d58-bf0d-efa178339091")
+	)
+	(wire
+		(pts
 			(xy 120.65 168.91) (xy 120.65 189.23)
 		)
 		(stroke
@@ -4431,6 +4680,16 @@
 			(type default)
 		)
 		(uuid "d72e2662-3f71-46a1-8248-021d435f6960")
+	)
+	(wire
+		(pts
+			(xy 238.76 54.61) (xy 241.3 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d88c6b0e-5b43-464a-b23b-d96171b2cdc3")
 	)
 	(wire
 		(pts
@@ -4504,6 +4763,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 45.72) (xy 228.6 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f17bbed5-7767-4f10-bdad-73303dbe5c1a")
+	)
+	(wire
+		(pts
 			(xy 205.74 36.83) (xy 203.2 36.83)
 		)
 		(stroke
@@ -4544,6 +4813,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 52.07) (xy 223.52 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6ad6aa5-0055-4e59-b82d-99b2e31c0e67")
+	)
+	(wire
+		(pts
 			(xy 273.05 34.29) (xy 281.94 34.29)
 		)
 		(stroke
@@ -4574,6 +4853,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 62.23) (xy 256.54 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc6d7f16-9e2c-4c3c-a181-e1e065c2cf70")
+	)
+	(wire
+		(pts
 			(xy 170.18 30.48) (xy 177.8 30.48)
 		)
 		(stroke
@@ -4581,6 +4870,16 @@
 			(type default)
 		)
 		(uuid "ff1347af-f09b-4cf9-b1b8-52e8223e249e")
+	)
+	(label "SCL"
+		(at 226.06 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09dbd494-6727-42c2-959b-9995a470ae88")
 	)
 	(label "USB_DP"
 		(at 158.75 54.61 180)
@@ -4661,6 +4960,16 @@
 			(justify right bottom)
 		)
 		(uuid "43a450f6-854e-4823-8e70-11336a1516a5")
+	)
+	(label "SDA"
+		(at 226.06 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "43d057df-1357-471c-8aac-b2f2aff99306")
 	)
 	(label "QSPI_SD2"
 		(at 113.03 53.34 180)
@@ -4974,6 +5283,72 @@
 			(project "binary_clock"
 				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 271.78 64.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16c88cc1-288c-4535-953f-85b775bc5179")
+		(property "Reference" "#PWR020"
+			(at 271.78 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 271.78 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 271.78 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e46d0f4-d83c-4969-bb76-1c1f4541fd22")
+		)
+		(instances
+			(project ""
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -6765,6 +7140,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 233.68 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a6af83a-5281-4a0f-a7f9-3b1319725c7d")
+		(property "Reference" "SW3"
+			(at 233.68 38.608 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BACKWARD"
+			(at 233.68 41.148 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
+			(at 233.68 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 233.68 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9eecb42a-ac5f-45e5-84b5-ee784fb01f16")
+		)
+		(pin "2"
+			(uuid "6bce4650-6fc6-434c-b762-d1f914b47799")
+		)
+		(instances
+			(project "binary_clock"
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 198.12 133.35 0)
 		(unit 1)
@@ -7159,6 +7601,73 @@
 			(project "binary_clock"
 				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 233.68 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "84095dab-9346-4c80-a3a8-b78ae58328fa")
+		(property "Reference" "SW4"
+			(at 233.68 48.514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FORWARD"
+			(at 233.68 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
+			(at 233.68 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 233.68 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc3acea9-c6e8-4720-82d1-0b3c2374651f")
+		)
+		(pin "2"
+			(uuid "3d719565-8dfd-4a5a-99e4-a3d957c6fad1")
+		)
+		(instances
+			(project "binary_clock"
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -7577,6 +8086,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Wuerth_450301014042")
+		(at 261.62 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9467c343-5285-4520-81d7-ae98ca43b861")
+		(property "Reference" "SW5"
+			(at 261.62 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TIMEZONE_CHANGE"
+			(at 261.62 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "switch:SW_Slide_8.6x3.8x7.0_P2.54mm"
+			(at 261.62 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
+			(at 261.62 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch slide, single pole double throw"
+			(at 261.62 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f94719cb-7bdf-458e-ad36-1e78e6282c28")
+		)
+		(pin "3"
+			(uuid "f401ef91-0019-44dd-967b-c625ce987b9f")
+		)
+		(pin "2"
+			(uuid "ee3ba9ff-ee4a-4217-9bc9-ef5a0f04bde3")
+		)
+		(instances
+			(project ""
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 214.63 30.48 180)
 		(unit 1)
@@ -7647,6 +8226,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 241.3 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "abdbe978-e83f-43af-8908-ccc4f37933e8")
+		(property "Reference" "#PWR022"
+			(at 241.3 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d6f0785-182f-484a-b441-b0329e69bb99")
+		)
+		(instances
+			(project "binary_clock"
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 151.13 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7705,6 +8350,72 @@
 			(project "binary_clock"
 				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 241.3 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "af0bb443-5d93-413c-a584-d0af509cf8f0")
+		(property "Reference" "#PWR021"
+			(at 241.3 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 241.3 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63e2cab5-6a75-4be9-8598-7782be5affec")
+		)
+		(instances
+			(project "binary_clock"
+				(path "/e502a73f-a3d5-4755-8e23-06b2a601e58a"
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
