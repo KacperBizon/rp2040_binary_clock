@@ -52,7 +52,16 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_edge_clearance|104000000|86300000|55b1c122-5f02-4b49-97b7-5683e1f9b485|8218f3bb-cb71-4018-b8d6-41fc39d185b9",
+          "usb c"
+        ],
+        [
+          "silk_edge_clearance|104000000|95700000|55b1c122-5f02-4b49-97b7-5683e1f9b485|f3b67236-c79e-4342-919d-e2e8e8c7d1a8",
+          "usb c"
+        ]
+      ],
       "meta": {
         "version": 2
       },
