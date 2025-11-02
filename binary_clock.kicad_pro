@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.9,
-          "height": 1.8,
-          "width": 1.8
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -53,6 +53,10 @@
       },
       "diff_pair_dimensions": [],
       "drc_exclusions": [
+        [
+          "lib_footprint_mismatch|150265000|104800000|2034ab5e-57ea-49bd-8508-099cd3d9e024|00000000-0000-0000-0000-000000000000",
+          "edited"
+        ],
         [
           "silk_edge_clearance|104000000|86300000|55b1c122-5f02-4b49-97b7-5683e1f9b485|8218f3bb-cb71-4018-b8d6-41fc39d185b9",
           "usb c"
@@ -142,7 +146,7 @@
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
