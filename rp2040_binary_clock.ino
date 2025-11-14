@@ -1,10 +1,9 @@
-#include <DS1307.h>
-DS1307 rtc(3, 4);
+#include "RTClib.h"
+RTC_DS3231 rtc;
 
-Time t;
-int ledPinsHr[] = {23, 22, 21, 20, 19};
-int ledPinsMin[] = {18, 17, 16, 15, 14, 13};
-int ledPinsSec[] = {12, 11, 10, 9, 8, 7};
+int ledPinsHr[] = {19, 20, 21, 22, 23};
+int ledPinsMin[] = {13, 14, 15, 16, 17, 18};
+int ledPinsSec[] = {7, 8, 9, 10, 11, 12};
 int decrease_time_pin = 2;
 int increase_time_pin = 3;
 int time_zone_pin = 6;
@@ -29,9 +28,6 @@ void setup(void)
 {
   pinMode(time_zone_pin, INPUT_PULLUP);
   
-  rtc.halt(false);
-  rtc.writeProtect(true);
-  
   for (byte i = 0; i < nBitsSec; i++) {
     pinMode(ledPinsSec[i], OUTPUT);
   }
@@ -41,22 +37,27 @@ void setup(void)
   for (byte i = 0; i < nBitsHr; i++) {
     pinMode(ledPinsHr[i], OUTPUT);
   }
+
+  if (! rtc.begin()) 
+  {
+    Serial.flush();
+    while (1) delay(10);
+  }
 }
 
 void loop()
 {
   dst = digitalRead(time_zone_pin) == HIGH;
 
+  DateTime now = rtc.now();
+
+  int m = (now.second());
+  int y = (now.minute());
+  int z = (now.hour());
+
     
-  t = rtc.getTime();
 
-  int m = (t.sec);
-  int y = (t.min);
-  int z = (t.hour);
-
-    
-
-    //utc + 1 / utc + 2
+  //utc + 1 / utc + 2
   if(dst)
     z = (z + 1) % 24;
    
