@@ -22,8 +22,10 @@ byte hours = 0;
 
 void setup(void)
 {
+  pinMode(decrease_time_pin, INPUT_PULLUP);
+  pinMode(increase_time_pin, INPUT_PULLUP);
   pinMode(time_zone_pin, INPUT_PULLUP);
-  
+
   for (byte i = 0; i < nBitsSec; i++) 
   {
     pinMode(ledPinsSec[i], OUTPUT);
@@ -37,12 +39,22 @@ void setup(void)
     pinMode(ledPinsHr[i], OUTPUT);
   }
 
-  if (! rtc.begin()) 
+  Wire.end();
+  delay(10);
+  Wire.begin();
+  delay(20);
+
+  if (!rtc.begin()) 
   {
     digitalWrite(ledPinsHr[nBitsHr - 1], HIGH);
 
     Serial.flush();
     while (1) delay(10);
+  }
+
+  if (rtc.lostPower())
+  {
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
@@ -55,8 +67,55 @@ void dispBinary(byte value, const byte* pins, byte nBits)
     }
 }
 
+void checkButtons()
+{
+  dst = digitalRead(time_zone_pin) == HIGH;
+
+  if(digitalRead(decrease_time_pin) == LOW)
+  {
+    if(minutes == 0)
+    {
+      minutes = 59;
+      hours = (hours + 23) % 24;
+    }
+    else
+    {
+      --minutes;
+    }
+    seconds = 0;
+
+    rtc.adjust(DateTime(rtc.now().year(), rtc.now().month(), rtc.now().day(), hours, minutes, seconds));
+    dispBinary(seconds, ledPinsSec, nBitsSec);
+    dispBinary(minutes, ledPinsMin, nBitsMin);
+    dispBinary(hours, ledPinsHr, nBitsHr);
+    delay(150);
+  }
+
+  if(digitalRead(increase_time_pin) == LOW)
+  {
+    if(minutes == 59)
+    {
+      minutes = 0;
+      hours = (hours + 1) % 24;
+    }
+    else
+    {
+      ++minutes;
+    }
+    seconds = 0;
+
+    rtc.adjust(DateTime(rtc.now().year(), rtc.now().month(), rtc.now().day(), hours, minutes, seconds));
+    dispBinary(seconds, ledPinsSec, nBitsSec);
+    dispBinary(minutes, ledPinsMin, nBitsMin);
+    dispBinary(hours, ledPinsHr, nBitsHr);
+    delay(200);
+  }
+}
+
 void loop()
 {
+  checkButtons();
+
   DateTime now = rtc.now();
 
   if(now.second() != lastSecond)
@@ -66,8 +125,6 @@ void loop()
     seconds = (now.second());
     minutes = (now.minute());
     hours = (now.hour());
-
-    dst = digitalRead(time_zone_pin) == HIGH;
 
     //utc + 1 / utc + 2
     if(dst)
