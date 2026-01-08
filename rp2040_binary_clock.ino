@@ -1,4 +1,7 @@
 #include "RTClib.h"
+
+constexpr bool USE_GRAY_CODE = false;
+
 RTC_DS3231 rtc;
 
 byte ledPinsSec[] = {7, 8, 9, 10, 11, 12};
@@ -26,11 +29,11 @@ void setup(void)
   pinMode(increase_time_pin, INPUT_PULLUP);
   pinMode(time_zone_pin, INPUT_PULLUP);
 
-  for (byte i = 0; i < nBitsSec; i++) 
+  for (byte i = 0; i < nBitsSec; i++)
   {
     pinMode(ledPinsSec[i], OUTPUT);
   }
-  for (byte i = 0; i < nBitsMin; i++) 
+  for (byte i = 0; i < nBitsMin; i++)
   {
     pinMode(ledPinsMin[i], OUTPUT);
   }
@@ -44,7 +47,7 @@ void setup(void)
   Wire.begin();
   delay(20);
 
-  if (!rtc.begin()) 
+  if (!rtc.begin())
   {
     digitalWrite(ledPinsHr[nBitsHr - 1], HIGH);
 
@@ -58,13 +61,21 @@ void setup(void)
   }
 }
 
+byte toGray(byte value)
+{
+  return value ^ (value >> 1);
+}
+
 void dispBinary(byte value, const byte* pins, byte nBits)
 {
-    for (byte i = 0; i < nBits; i++)
-    {
-        gpio_put(pins[i], value & 1);
-        value >>= 1;
-    }
+  if constexpr (USE_GRAY_CODE)
+    value = toGray(value);
+
+  for (byte i = 0; i < nBits; i++)
+  {
+    gpio_put(pins[i], value & 1);
+    value >>= 1;
+  }
 }
 
 void checkButtons()
@@ -129,7 +140,7 @@ void loop()
     //utc + 1 / utc + 2
     if(dst)
       hours = (hours + 1) % 24;
-    
+
     dispBinary(seconds, ledPinsSec, nBitsSec);
     dispBinary(minutes, ledPinsMin, nBitsMin);
     dispBinary(hours, ledPinsHr, nBitsHr);
