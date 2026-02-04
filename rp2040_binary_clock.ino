@@ -44,9 +44,9 @@ void setup(void)
   }
 
   Wire.end();
-  delay(20);
+  delay(30);
   Wire.begin();
-  delay(20);
+  delay(30);
 
   while (!rtc.begin())
   {
@@ -61,7 +61,7 @@ void setup(void)
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 
-  watchdog_enable(10000, 1);
+  watchdog_enable(8000, 1);
 }
 
 byte toGray(byte value)
@@ -87,42 +87,24 @@ void checkButtons()
 
   if(digitalRead(decrease_time_pin) == LOW)
   {
-    if(minutes == 0)
-    {
-      minutes = 59;
-      hours = (hours + 23) % 24;
-    }
-    else
-    {
-      --minutes;
-    }
-    seconds = 0;
+    delay(200);
 
-    rtc.adjust(DateTime(rtc.now().year(), rtc.now().month(), rtc.now().day(), hours, minutes, seconds));
-    dispBinary(seconds, ledPinsSec, nBitsSec);
-    dispBinary(minutes, ledPinsMin, nBitsMin);
-    dispBinary(hours, ledPinsHr, nBitsHr);
-    delay(150);
+    DateTime now = rtc.now();
+    DateTime newTime = now - TimeSpan(0, 0, 1, 0);
+    rtc.adjust(DateTime(newTime.year(), newTime.month(), newTime.day(), newTime.hour(), newTime.minute(), 0));
+
+    lastSecond = 99;
   }
 
   if(digitalRead(increase_time_pin) == LOW)
   {
-    if(minutes == 59)
-    {
-      minutes = 0;
-      hours = (hours + 1) % 24;
-    }
-    else
-    {
-      ++minutes;
-    }
-    seconds = 0;
-
-    rtc.adjust(DateTime(rtc.now().year(), rtc.now().month(), rtc.now().day(), hours, minutes, seconds));
-    dispBinary(seconds, ledPinsSec, nBitsSec);
-    dispBinary(minutes, ledPinsMin, nBitsMin);
-    dispBinary(hours, ledPinsHr, nBitsHr);
     delay(200);
+
+    DateTime now = rtc.now();
+    DateTime newTime = now + TimeSpan(0, 0, 1, 0);
+    rtc.adjust(DateTime(newTime.year(), newTime.month(), newTime.day(), newTime.hour(), newTime.minute(), 0));
+
+    lastSecond = 99;
   }
 }
 

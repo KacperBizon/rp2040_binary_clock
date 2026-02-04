@@ -5,6 +5,7 @@
 - In Arduino IDE add "Arduino Mbed OS RP2040 Boards" in boards manager
 - In Arduino IDE add "RTClib" in library manager
 - Set the time on the clock to 'standard time' and change time to daylight saving time with slide switch
+- Flash only by dragging the uf2
 
 ### Optional resistors
 - R4 - 10K - use only when having problems with writing to memory
