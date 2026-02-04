@@ -1,4 +1,5 @@
 #include "RTClib.h"
+#include <hardware/watchdog.h>
 
 constexpr bool USE_GRAY_CODE = false;
 
@@ -43,22 +44,24 @@ void setup(void)
   }
 
   Wire.end();
-  delay(10);
+  delay(20);
   Wire.begin();
   delay(20);
 
-  if (!rtc.begin())
+  while (!rtc.begin())
   {
-    digitalWrite(ledPinsHr[nBitsHr - 1], HIGH);
+    digitalWrite(ledPinsHr[nBitsHr - 1], !digitalRead(ledPinsHr[nBitsHr - 1]));
 
-    Serial.flush();
-    while (1) delay(10);
+    Wire.begin();
+    delay(500);
   }
 
   if (rtc.lostPower())
   {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
+
+  watchdog_enable(10000, 1);
 }
 
 byte toGray(byte value)
@@ -123,26 +126,38 @@ void checkButtons()
   }
 }
 
+void updateClock()
+{
+  static unsigned long lastReadTime = 0;
+  if (millis() - lastReadTime > 100)
+  {
+    lastReadTime = millis();
+    DateTime now = rtc.now();
+
+    if(now.second() != lastSecond)
+    {
+      lastSecond = now.second();
+
+      seconds = (now.second());
+      minutes = (now.minute());
+      hours = (now.hour());
+
+      //utc + 1 / utc + 2
+      if(dst)
+        hours = (hours + 1) % 24;
+
+      dispBinary(seconds, ledPinsSec, nBitsSec);
+      dispBinary(minutes, ledPinsMin, nBitsMin);
+      dispBinary(hours, ledPinsHr, nBitsHr);
+    }
+  }
+}
+
 void loop()
 {
+  watchdog_update();
+
   checkButtons();
 
-  DateTime now = rtc.now();
-
-  if(now.second() != lastSecond)
-  {
-    lastSecond = now.second();
-
-    seconds = (now.second());
-    minutes = (now.minute());
-    hours = (now.hour());
-
-    //utc + 1 / utc + 2
-    if(dst)
-      hours = (hours + 1) % 24;
-
-    dispBinary(seconds, ledPinsSec, nBitsSec);
-    dispBinary(minutes, ledPinsMin, nBitsMin);
-    dispBinary(hours, ledPinsHr, nBitsHr);
-  }
+  updateClock();
 }
