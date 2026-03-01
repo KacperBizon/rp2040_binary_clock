@@ -3,7 +3,8 @@
 
 ## Flashing
 1. Hold BOOTSEL button while plugging the USB
-2. Drag the rp2040_binary_clock.uf2 from build/ to RPI-RP2
+2. mount the device (RPI-RP2)
+3. Drag the rp2040_binary_clock.uf2 to RPI-RP2
 
 ## Building from Source (Pico C/C++ SDK)
 ### Prerequisites
