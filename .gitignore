@@ -41,6 +41,3 @@ fp-info-cache
 
 #production
 production/
-
-#for Arduino
-build/
