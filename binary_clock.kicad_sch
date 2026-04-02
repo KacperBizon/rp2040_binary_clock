@@ -5633,7 +5633,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 57.15) (xy 162.56 57.15)
+			(xy 151.13 57.15) (xy 154.94 57.15)
 		)
 		(stroke
 			(width 0)
@@ -6053,7 +6053,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 54.61) (xy 172.72 54.61)
+			(xy 162.56 54.61) (xy 172.72 54.61)
 		)
 		(stroke
 			(width 0)
@@ -7123,7 +7123,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 57.15) (xy 172.72 57.15)
+			(xy 162.56 57.15) (xy 172.72 57.15)
 		)
 		(stroke
 			(width 0)
@@ -7503,7 +7503,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 54.61) (xy 162.56 54.61)
+			(xy 151.13 54.61) (xy 154.94 54.61)
 		)
 		(stroke
 			(width 0)
@@ -7901,6 +7901,16 @@
 		)
 		(uuid "ff1347af-f09b-4cf9-b1b8-52e8223e249e")
 	)
+	(label "RP_USB_P"
+		(at 172.72 54.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0313128e-8ed5-43db-ab34-c1ffd158edcb")
+	)
 	(label "SCL"
 		(at 226.06 59.69 0)
 		(effects
@@ -7911,8 +7921,8 @@
 		)
 		(uuid "09dbd494-6727-42c2-959b-9995a470ae88")
 	)
-	(label "USB_DP"
-		(at 158.75 54.61 180)
+	(label "USB_P"
+		(at 151.13 54.61 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8131,8 +8141,8 @@
 		)
 		(uuid "d0474afd-c8f2-4b3f-899a-54e43242a139")
 	)
-	(label "USB_DM"
-		(at 158.75 57.15 180)
+	(label "USB_N"
+		(at 151.13 57.15 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8141,7 +8151,7 @@
 		)
 		(uuid "d29b7246-9bcc-4d7d-97e0-fab58278c785")
 	)
-	(label "USB_DM"
+	(label "USB_N"
 		(at 58.42 160.02 0)
 		(effects
 			(font
@@ -8181,6 +8191,16 @@
 		)
 		(uuid "eb89331a-2c14-46a7-a48f-15a38ee18c36")
 	)
+	(label "RP_USB_N"
+		(at 172.72 57.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ecd0b11a-8a25-45a9-9184-f052908aa929")
+	)
 	(label "SCL"
 		(at 45.72 109.22 180)
 		(effects
@@ -8191,7 +8211,7 @@
 		)
 		(uuid "ed7d3262-1dec-4874-ba1f-73ab45910269")
 	)
-	(label "USB_DP"
+	(label "USB_P"
 		(at 58.42 165.1 0)
 		(effects
 			(font
@@ -8534,7 +8554,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 166.37 54.61 90)
+		(at 158.75 54.61 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8542,7 +8562,7 @@
 		(dnp no)
 		(uuid "1912db95-88e8-483e-9e11-878a7ab6508c")
 		(property "Reference" "R1"
-			(at 166.37 50.546 90)
+			(at 158.75 50.546 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8550,7 +8570,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 166.37 52.578 90)
+			(at 158.75 52.578 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8558,7 +8578,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 166.37 56.388 90)
+			(at 158.75 56.388 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8567,7 +8587,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 166.37 54.61 0)
+			(at 158.75 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8576,7 +8596,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 166.37 54.61 0)
+			(at 158.75 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14602,7 +14622,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 166.37 57.15 90)
+		(at 158.75 57.15 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14610,7 +14630,7 @@
 		(dnp no)
 		(uuid "b0b17da3-e687-45c3-a529-2025d2dac78b")
 		(property "Reference" "R2"
-			(at 166.37 59.436 90)
+			(at 158.75 59.436 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14618,7 +14638,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 166.37 61.468 90)
+			(at 158.75 61.468 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14626,7 +14646,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 166.37 58.928 90)
+			(at 158.75 58.928 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14635,7 +14655,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 166.37 57.15 0)
+			(at 158.75 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14644,7 +14664,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 166.37 57.15 0)
+			(at 158.75 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16381,10 +16401,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f19d3e0e-c40e-49bb-ba81-9f0380bea15b")
 		(property "Reference" "U2"
-			(at 137.16 49.5299 0)
+			(at 136.906 47.752 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16393,7 +16412,7 @@
 			)
 		)
 		(property "Value" "W25Q32JVSS"
-			(at 137.16 52.0699 0)
+			(at 136.906 50.292 0)
 			(effects
 				(font
 					(size 1.27 1.27)
